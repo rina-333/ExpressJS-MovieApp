@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include ( 'partialHead' ) %>
+<body>
+    <%- include ( 'partialHeader' ) %>
+    <main>
+        <div id="content">
+            <article class="card">
+                <h2>Edit Movie</h2>
+                <form action="/movie/<%= MovieRecord.id %>/edit" method="post">
+                  <label for="name">Name</label><br>
+                  <input type="text" name="name" id="name" value="<%= MovieRecord.name %>"><br>
+                  <label for="released_year">Release Year</label><br>
+                  <input type="number" name="released_year" id="released_year" value="<%= MovieRecord.released_year%>"><br>
+                  <label for="genre">Genre</label><br>
+                  <select name="genre" id="genre">
+                    <option disabled selected>-- Select Genre --</option>
+                    <option value="animation" <%= MovieRecord.genre == "animation" ? "selected" : null %> >animation</option>
+                    <option value="comedy" <%= MovieRecord.genre == "comedy" ? "selected" : null %> >comedy</option>
+                    <option value="drama" <%= MovieRecord.genre == "drama" ? "selected" : null %> >drama</option>
+                    <option value="horror" <%= MovieRecord.genre == "horror" ? "selected" : null %> >horror</option>
+                    <option value="religious" <%= MovieRecord.genre == "religious" ? "selected" : null %> >religious</option>
+                    <option value="thriller" <%= MovieRecord.genre == "thriller" ? "selected" : null %> >thriller</option>
+                  </select><br>
+                  <br>
+
+                  <label for="ProductionHouseId">Production House</label>
+                  <select name="ProductionHouseId" id="ProductionHouseId">
+                    <option disabled selected> ----- SELECT HERE ----- </option>
+                    <% ProductionRecord.forEach ( ( element ) => { %>
+                      <option value="<%= element.id %>" <%= MovieRecord.ProductionHouseId == element.id ? "selected" : null %>><%= element.name_prodHouse %></option>
+                    <% } ) %>
+                  </select>
+
+                  <button type="submit" class="link-button">Save</button>
+                  <a href="/movie" class="link-button2">Cancel</a>
+                </form>
+            </article>
+        </div>
+    </main>
+    <footer>
+        <p>Disclaimer : This website only present for study and education.</p>
+    </footer>
+</body>
+</html>

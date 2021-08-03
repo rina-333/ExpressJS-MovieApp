@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include ( 'partialHead' ) %>
+<body>
+    <%- include ( 'partialHeader' ) %>
+    <main>
+        <div id="content">
+            <article class="card">
+                <h2>Production House</h2>
+                <table border="1">
+                  <thead>
+                    <tr>
+                      <th>Name</th>
+                      <th>Headquarters</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <% DataProduction.forEach ( ( element ) => { %>
+                      <tr>
+                        <td><%= element.name_prodHouse %></td>
+                        <td><%= element.headquarters %></td>
+                      </tr>
+                    <% } ) %>
+                  </tbody>
+                </table>
+                
+            </article>
+        </div>
+    </main>
+    <footer>
+        <p>Disclaimer : This website only present for study and education.</p>
+    </footer>
+</body>
+</html>

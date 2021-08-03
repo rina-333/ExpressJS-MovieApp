@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include ( 'partialHead' ) %>
+<body>
+    <%- include ( 'partialHeader' ) %>
+    <main>
+        <div id="content">
+            <article class="card">
+              <h2><%= CastRecord.fullName() %></h2>
+            </article>
+            <article class="card">
+                <h2>See Movie</h2>
+                <table border="1">
+                  <thead>
+                    <tr>
+                      <th>Movie</th>
+                      <th>Released Year</th>
+                      <th>Age When Movie Released</th>
+                      <th>Role</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <% CastRecord.forEach ( ( element ) => { %>
+                      <tr>
+                        <td><%= element.name %></td>
+                        <!-- <td>Perdoname</td> -->
+                        <td><%= element.released_year %></td>
+                        <td><%= yearFormatter ( element.released_year, CastRecord.birth_year ) %></td>
+                        <td><%= element.MovieCast.role %></td>
+                      
+                      </tr>
+                    <% } ) %>
+                  </tbody>
+                </table>
+                
+            </article>
+        </div>
+    </main>
+    <footer>
+        <p>Disclaimer : This website only present for study and education.</p>
+    </footer>
+</body>
+</html>

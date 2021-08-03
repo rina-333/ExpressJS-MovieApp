@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include ( 'partialHead' ) %>
+<body>
+    <%- include ( 'partialHeader' ) %>
+    <main>
+        <div id="content">
+            <article  class="card">
+                <h2>Add Movie</h2>
+                <form action="/movie/add" method="post">
+                  <label for="name">Name</label><br>
+                  <input type="text" name="name" id="name"><br>
+                  <label for="released_year">Release Year</label><br>
+                  <input type="number" name="released_year" id="released_year"><br>
+                  <label for="genre">Genre</label><br>
+                  <select name="genre" id="genre">
+                    <option disabled selected>-- Select Genre --</option>
+                    <option value="animation">animation</option>
+                    <option value="comedy">comedy</option>
+                    <option value="drama">drama</option>
+                    <option value="horror">horror</option>
+                    <option value="religious">religious</option>
+                    <option value="thriller">thriller</option>
+                  </select><br>
+                  <br>
+                  <button type="submit" class="link-button">Save</button>
+                  <a href="/movie" class="link-button2">Cancel</a>
+                </form>
+            </article>
+        </div>
+    </main>
+    <footer>
+        <p>Disclaimer : This website only present for study and education.</p>
+    </footer>
+</body>
+</html>

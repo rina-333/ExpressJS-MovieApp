@@ -1,0 +1,31 @@
+{
+  "name": "ExpressJS-MovieApp",
+  "version": "1.0.0",
+  "description": "This movie app is using :\r ## Express.js\r ## PostgreSQL\r ## ORM - Sequelize\r ## Promise Base\r ## One To Many and Many to Many Relation\r ## EJS (Embedded Javascript)",
+  "main": "app.js",
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "pg": "^8.7.1",
+    "sequelize": "^6.6.5",
+    "sequelize-cli": "^6.2.0"
+  },
+  "devDependencies": {
+    "dotenv": "^10.0.0",
+    "nodemon": "^2.0.12"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rina-333/ExpressJS-MovieApp.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rina-333/ExpressJS-MovieApp/issues"
+  },
+  "homepage": "https://github.com/rina-333/ExpressJS-MovieApp#readme"
+}

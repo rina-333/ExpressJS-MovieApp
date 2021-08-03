@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include ( 'partialHead' ) %>
+<body>
+    <%- include ( 'partialHeader' ) %>
+    <main>
+        <div id="content">
+            <article class="card">
+                <h2>Movie</h2>
+                <a href="/movie/add"  class="link-button">Add Movie</a>
+                <table border="1">
+                  <thead>
+                    <tr>
+                      <th>Name</th>
+                      <th>Released Year</th>
+                      <th>Genre</th>
+                      <th>Production House</th>
+                      <th>Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <% DataMovie.forEach ( ( element ) => { %>
+                      <tr>
+                        <td><%= element.name %></td>
+                        <td><%= element.released_year %></td>
+                        <td><%= element.genre %></td>
+                        <% if ( element.ProductionHouse ) { %>
+                          <td><%= element.ProductionHouse.name_prodHouse %></td>
+                        <% } else { %>
+                          <td>Unknown</td>
+                        <% } %>
+                        <td><a href="/movie/<%= element.id %>/edit" class="link-button">Edit</a> | <a href="/movie/<%= element.id %>/delete" class="link-button2">Delete</a> | <a href="/movie/<%= element.id %>/addMovieCast" class="link-button">Add Cast</a></td>
+                      </tr>
+                    <% } ) %>
+                  </tbody>
+                </table>
+                
+            </article>
+        </div>
+    </main>
+    <footer>
+        <p>Disclaimer : This website only present for study and education.</p>
+    </footer>
+</body>
+</html>

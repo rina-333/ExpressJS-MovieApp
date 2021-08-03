@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include ( 'partialHead' ) %>
+<body>
+    <%- include ( 'partialHeader' ) %>
+    <main>
+        <div id="content">
+            <article class="card">
+                <h2>Cast</h2>
+                <a href="/cast/add"  class="link-button">Add Cast</a>
+                <table border="1">
+                  <thead>
+                    <tr>
+                      <th>Name</th>
+                      <th>Birth Year</th>
+                      <th>Phone Number</th>
+                      <th>Gender</th>
+                      <th>Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <% DataCast.forEach ( ( element ) => { %>
+                      <tr>
+                        <td><%= element.fullName() %></td>
+                        <!-- <td>Perdoname</td> -->
+                        <td><%= element.birth_year %></td>
+                        <td><%= element.phone_number %></td>
+                        <td><%= element.gender %></td>
+                        <td><a href="/cast/<%= element.id %>/edit" class="link-button">Edit</a> | <a href="/cast/<%= element.id %>/delete" class="link-button2" onclick="return confirm ( 'Yakinkah HAPUS ?' )">Delete</a> | <a href="/cast/<%= element.id %>/seeMovie" class="link-button">See Movie</a></td>
+                      </tr>
+                    <% } ) %>
+                  </tbody>
+                </table>
+                
+            </article>
+        </div>
+    </main>
+    <footer>
+        <p>Disclaimer : This website only present for study and education.</p>
+    </footer>
+</body>
+</html>

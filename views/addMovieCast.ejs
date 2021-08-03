@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include ( 'partialHead' ) %>
+<body>
+    <%- include ( 'partialHeader' ) %>
+    <main>
+        <div id="content">
+          <article class="card">
+            <h2>Add Cast</h2>
+            <form action="/movie/:<%= MovieRecord.id %>/addMovieCast" method="post">
+              <label for="fullName">Nama Aktor</label><br>
+              <select name="fullName" id="fullName">
+                <option disabled selected> ----- SELECT HERE ----- </option>
+                <% CastRecord.forEach ( ( element ) => { %>
+                  <option value="<%= element.id %>" <%= MovieCastRecord[0].Movie.id == element.id ? "selected" : null %>><%= element.fullname %></option>
+                  <% } ) %>
+                </select> <br>
+                <br>
+                <label for="role">Role</label><br>
+                <input type="text" name="role" id="role"><br>
+                <br>
+
+              <button type="submit" class="link-button">Save</button>
+              <a href="/cast" class="link-button2">Cancel</a>
+            </form>
+        </article>
+            <article class="card">
+              <h2>Name Movie</h2>
+              <table border="1">
+                <thead>
+                  <tr>
+                    <th>Movie Selected</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><%= MovieCastRecord[0].Movie.name %></td>
+                  </tr>
+                </tbody>
+              </table>
+              <h2>Cast</h2>
+              <table border="1">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Role</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <% CastRecord.forEach ( ( element ) => { %>
+                    
+                      <tr>
+                        <td><%= element.fullName() %></td>
+                        <td><%= element.role %></td>
+                      </tr>
+      
+                  <% } ) %>
+                </tbody>
+              </table>
+              
+          </article>
+        </div>
+    </main>
+    <footer>
+        <p>Disclaimer : This website only present for study and education.</p>
+    </footer>
+</body>
+</html>

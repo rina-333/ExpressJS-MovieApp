@@ -88,13 +88,14 @@ class movieController {
     } )
       .then ( ( DataMovieCast ) => {
         MovieCastRecord = DataMovieCast
-        return Movie.findAll ()
+        return Cast.findAll ()
       } )
       .then ( ( DataMovie ) => {
         MovieRecord = DataMovie
-        return Cast.findAll ()
+        return Movie.findAll ()
       } )
       .then ( ( CastRecord ) => {
+        // console.log ( "ini nih", MovieCastRecord, "ada gag?" )
         res.render ( 'addMovieCast', { CastRecord, MovieCastRecord, MovieRecord } )
       } )
       .catch ( ( err ) => {

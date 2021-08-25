@@ -1,7 +1,7 @@
 const express = require( 'express' )
 const app = express()
 
-const port = 3333
+const port = process.env.PORT || 3333
 const router = require( './routes' ) //index.js auto baca
 
 app.set( 'view engine', 'ejs' )

@@ -6,4 +6,3 @@ This movie app is using :
 ## ORM - Sequelize
 ## Promise Base
 ## One To Many and Many to Many Relation
-## EJS (Embedded Javascript)

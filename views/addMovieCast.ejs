@@ -9,14 +9,15 @@
             <h2>Add Cast</h2>
             <form action="/movie/:<%= MovieRecord.id %>/addMovieCast" method="post">
               <label for="fullName">Nama Aktor</label><br>
-              <select name="fullName" id="fullName">
+              <select name="fullName" id="CastId">
                 <option disabled selected> ----- SELECT HERE ----- </option>
                 <% CastRecord.forEach ( ( element ) => { %>
-                  <option value="<%= element.id %>" <%= MovieCastRecord[0].Movie.id == element.id ? "selected" : null %>><%= element.fullname %></option>
+                  <option value="<%= element.id %>" <%= MovieCastRecord.CastId == element.id ? "selected" : null %>><%= element.fullName(element.id) %></option>>
                   <% } ) %>
                 </select> <br>
                 <br>
                 <label for="role">Role</label><br>
+                <input type="hidden" id="MovieId" name="MovieId" value="<%= MovieRecord.id %>">
                 <input type="text" name="role" id="role"><br>
                 <br>
 
@@ -33,9 +34,7 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td><%= MovieCastRecord[0].Movie.name %></td>
-                  </tr>
+                
                 </tbody>
               </table>
               <h2>Cast</h2>

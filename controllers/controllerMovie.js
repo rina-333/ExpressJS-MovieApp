@@ -88,14 +88,13 @@ class movieController {
     } )
       .then ( ( DataMovieCast ) => {
         MovieCastRecord = DataMovieCast
-        return Cast.findAll ()
+        return Movie.findAll ()
       } )
       .then ( ( DataMovie ) => {
         MovieRecord = DataMovie
-        return Movie.findAll ()
+        return Cast.findAll ()
       } )
       .then ( ( CastRecord ) => {
-        // console.log ( "ini nih", MovieCastRecord, "ada gag?" )
         res.render ( 'addMovieCast', { CastRecord, MovieCastRecord, MovieRecord } )
       } )
       .catch ( ( err ) => {
@@ -104,10 +103,10 @@ class movieController {
   }
 
   static postAddMovieCast ( req, res ) {
-    let id = +req.params.id
+    // let id = +req.params.id
     MovieCast.create ( {
       CastId : req.body.CastId,
-      MovieId : id,
+      MovieId : req.body.MovieId,
       role : req.body.role
     } )
       .then ( () => {

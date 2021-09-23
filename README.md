@@ -3,7 +3,7 @@
 This movie app is using :
 ## Express.js
 ## PostgreSQL
-#Node Js
+## Node Js
 ## ORM - Sequelize
 ## Promise Base
 ## One To Many and Many to Many Relation

@@ -10,5 +10,5 @@ app.use( express.urlencoded ( { extended: true } ) )
 app.use( '/', router )
 
 app.listen( PORT, () => { 
-  console.log( `running at http://localhost:${port}` )
+  console.log( `running at http://localhost:${PORT}` )
 } ) 
